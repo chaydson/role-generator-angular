@@ -1,0 +1,22 @@
+<mat-toolbar color="primary">  
+    <mat-toolbar-row>
+      <span class="item-spacer"><a routerLink="/">App</a></span>
+      
+      <button mat-button class="button-principal" [matMenuTriggerFor]="catMenu">Categorias</button>
+      <mat-menu #catMenu="matMenu" xPosition="after">
+        <button mat-menu-item>Visualizar Categorias</button>
+        <button mat-menu-item>Cadastrar Categorias</button>
+      </mat-menu>
+
+      <button mat-button class="button-principal"  [matMenuTriggerFor]="opMenu">Opções</button>
+      <mat-menu #opMenu="matMenu" xPosition="after">
+        <button mat-menu-item>Visualizar Opções</button>
+        <button mat-menu-item>Cadastrar Opções</button>
+      </mat-menu>
+
+      <span class="example-spacer"></span>
+      <mat-icon class="example-icon" aria-hidden="false" aria-label="Example heart icon">favorite</mat-icon>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  
+
