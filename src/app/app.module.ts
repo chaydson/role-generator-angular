@@ -6,6 +6,9 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatTableModule} from '@angular/material/table';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -14,8 +17,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './components/content/header/header.component';
 import { MainComponent } from './components/content/main/main.component';
 import { ResultComponent } from './components/content/result/result.component';
-import { RegistrationComponent } from './components/registration-display/categories/registration/registration.component';
-import { ListingComponent } from './components/registration-display/categories/listing/listing.component';
+import { CatListingComponent } from './components/registration-display/categories/cat-listing/cat-listing.component';
+import { CatRegisterComponent } from './components/registration-display/categories/cat-register/cat-register.component';
+import { OpListingComponent } from './components/registration-display/options/op-listing/op-listing.component';
+import { OpRegisterComponent } from './components/registration-display/options/op-register/op-register.component';
+import { AuthComponent } from './components/auth/auth.component';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -23,8 +30,12 @@ import { ListingComponent } from './components/registration-display/categories/l
     HeaderComponent,
     MainComponent,
     ResultComponent,
-    RegistrationComponent,
-    ListingComponent,
+    CatRegisterComponent,
+    OpListingComponent,
+    OpRegisterComponent,
+    CatListingComponent,
+    AuthComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +45,10 @@ import { ListingComponent } from './components/registration-display/categories/l
     MatIconModule,
     MatButtonModule,
     MatTableModule,
-    MatMenuModule
+    MatMenuModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

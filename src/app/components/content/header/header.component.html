@@ -1,21 +1,29 @@
 <mat-toolbar color="primary">  
     <mat-toolbar-row>
-      <span class="item-spacer"><a routerLink="/">App</a></span>
+      <span class="item-spacer"><a routerLink="/home">App</a></span>
       
       <button mat-button class="button-principal" [matMenuTriggerFor]="catMenu">Categorias</button>
       <mat-menu #catMenu="matMenu" xPosition="after">
-        <button mat-menu-item>Visualizar Categorias</button>
-        <button mat-menu-item>Cadastrar Categorias</button>
+        <a routerLink="categories/list">
+          <button mat-menu-item>Visualizar Categorias</button>
+        </a>
+        <a routerLink="categories/register">
+          <button mat-menu-item>Cadastrar Categorias</button>
+        </a>
       </mat-menu>
 
       <button mat-button class="button-principal"  [matMenuTriggerFor]="opMenu">Opções</button>
       <mat-menu #opMenu="matMenu" xPosition="after">
-        <button mat-menu-item>Visualizar Opções</button>
-        <button mat-menu-item>Cadastrar Opções</button>
+        <a routerLink="options/list">
+          <button mat-menu-item>Visualizar Opções</button>
+        </a> 
+        <a routerLink="options/register">
+          <button mat-menu-item>Cadastrar Opções</button>
+        </a>
       </mat-menu>
 
       <span class="example-spacer"></span>
-      <mat-icon class="example-icon" aria-hidden="false" aria-label="Example heart icon">favorite</mat-icon>
+      <span class="item-spacer"><a routerLink="/auth">Log out</a></span>
     </mat-toolbar-row>
   </mat-toolbar>
   
