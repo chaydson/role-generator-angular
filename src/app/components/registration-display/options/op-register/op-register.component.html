@@ -10,14 +10,13 @@
     <mat-form-field appearance="fill">
         <mat-label>Categoria</mat-label>
         <mat-select formControlName="category">
-          <mat-option value="filmes">Filmes</mat-option>
-          <mat-option value="roupas">Roupas</mat-option>
+          <mat-option [value]="category.name" *ngFor="let category of categories">{{ category.name }}</mat-option>
         </mat-select>
     </mat-form-field>
     <br>
     <pre>
       {{ formOptionRegister.value | json }}
     </pre>
-    <button mat-raised-button color="primary">Cadastrar</button>
+    <button mat-raised-button color="primary" (click)="addOption()">Cadastrar</button>
     </form>
 </div>

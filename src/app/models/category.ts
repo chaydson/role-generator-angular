@@ -5,3 +5,7 @@ export interface Category {
     name: string;
     options?: Option[];
 }
+
+export interface AddCategoryRequest {
+    name: string;
+}
