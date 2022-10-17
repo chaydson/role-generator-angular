@@ -1,18 +1,23 @@
 <div style="text-align: center;">
     <h1>Cadastro de Opções</h1>
-    <p>
+    <form [formGroup]="formOptionRegister">
+      <p>
         <mat-form-field appearance="outline">
           <mat-label>Nome da opção</mat-label>
-          <input matInput placeholder="Ex: Jogos Mortais">
+          <input matInput placeholder="Ex: Jogos Mortais" formControlName="name">
         </mat-form-field>
     </p>
     <mat-form-field appearance="fill">
         <mat-label>Categoria</mat-label>
-        <mat-select>
-          <mat-option value="one">Filmes</mat-option>
-          <mat-option value="two">Roupas</mat-option>
+        <mat-select formControlName="category">
+          <mat-option value="filmes">Filmes</mat-option>
+          <mat-option value="roupas">Roupas</mat-option>
         </mat-select>
     </mat-form-field>
     <br>
+    <pre>
+      {{ formOptionRegister.value | json }}
+    </pre>
     <button mat-raised-button color="primary">Cadastrar</button>
+    </form>
 </div>

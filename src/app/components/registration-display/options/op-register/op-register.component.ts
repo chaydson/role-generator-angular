@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-op-register',
@@ -6,8 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./op-register.component.css']
 })
 export class OpRegisterComponent implements OnInit {
+  formOptionRegister: FormGroup;
 
-  constructor() { }
+  constructor(private formBuilder: FormBuilder) { 
+    this.formOptionRegister = this.formBuilder.group({
+      name: ['', Validators.required],
+      category: ['', Validators.required]
+    })
+  }
 
   ngOnInit(): void {
   }

@@ -1,27 +1,38 @@
 <div style="text-align: center;">
-    <h1>Registro</h1>
+  <h1>Registro</h1>
+  <form [formGroup]="formRegister">
     <p>
-        <mat-form-field appearance="outline">
-          <mat-label>Nome de Usuário</mat-label>
-          <input matInput>
-        </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Nome</mat-label>
+        <input matInput formControlName="name">
+      </mat-form-field>
     </p>
     <p>
-        <mat-form-field appearance="outline">
-          <mat-label>E-mail</mat-label>
-          <input matInput>
-        </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Nome de Usuário</mat-label>
+        <input matInput formControlName="username">
+      </mat-form-field>
     </p>
     <p>
-        <mat-form-field appearance="outline">
-            <mat-label>Senha</mat-label>
-            <input matInput [type]="'password'">
-          </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>E-mail</mat-label>
+        <input matInput formControlName="email">
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Senha</mat-label>
+        <input matInput [type]="'password'" formControlName="password">
+      </mat-form-field>
     </p>
     <button mat-raised-button color="primary">Cadastrar</button>
-    <br>
-    <br>
-    <p>
-        <a routerLink="/auth">Login</a>
-    </p>
+  </form>
+  <pre>
+    {{ formRegister.value | json}}
+  </pre>
+  <br>
+  <br>
+  <p>
+    <a routerLink="/auth">Login</a>
+  </p>
 </div>
