@@ -11,7 +11,7 @@
       <th mat-header-cell *matHeaderCellDef> Opção </th>
       <td mat-cell *matCellDef="let category"> 
         <div *ngIf="category.options[0] !== undefined">
-          {{ category.options[0].name }} 
+          {{ category.options[getRandomNumber(category.options.length)].name }} 
         </div>
       </td>
     </ng-container>

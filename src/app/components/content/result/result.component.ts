@@ -18,14 +18,20 @@ export class ResultComponent implements OnInit {
   ngOnInit(): void {
   }
   
+  getRandomNumber(max: number){
+    return Math.floor(Math.random() * max);
+  }
+
   getCategories(){
     this.categoryService.getCategories().subscribe((categories) => {
       this.categories = categories;
 
-      if(categories[1].options[0] === undefined){
+      /* if(categories[1].options[0] === undefined){
         console.log("UNDEFINEDEEEEE")
-      }
-      console.log(categories[5].options[0].name);
+      } */
+      console.log(this.getRandomNumber(categories[5].options.length));
+      //console.log(this.getRandomNumber(4));
+
     });
   }
 }

@@ -10,7 +10,12 @@
      <!-- Category Column -->
      <ng-container matColumnDef="category">
       <th mat-header-cell *matHeaderCellDef> Categoria </th>
-      <td mat-cell *matCellDef="let option"> {{ option.category.name }} </td>
+      <td mat-cell *matCellDef="let option">
+        <div *ngIf="option.category.name !== undefined; else elseBlock">
+          {{ option.category.name }} 
+        </div>
+        <ng-template #elseBlock> {{ option.category }} </ng-template>
+      </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
