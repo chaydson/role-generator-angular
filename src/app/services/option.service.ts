@@ -15,7 +15,7 @@ export class OptionService {
     return this.http.get<Option[]>(`${this.api}/options`);
   }
 
-  addOption(category: AddOptionRequest): Observable<AddOptionRequest> {
+  addOption(category: AddOptionRequest){
     return this.http.post<AddOptionRequest>(`${this.api}/option`, category);
   }
 }

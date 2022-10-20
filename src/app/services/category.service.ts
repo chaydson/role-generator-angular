@@ -19,7 +19,7 @@ export class CategoryService {
     return this.http.get<Category[]>(`${this.api}/categories`);
   }
 
-  addCategory(category: AddCategoryRequest): Observable<AddCategoryRequest> {
+  addCategory(category: AddCategoryRequest){
     return this.http.post<AddCategoryRequest>(`${this.api}/category`, category, {headers: this.header});
   }
 
