@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { LoginRequest } from '../models/auth';
+import { TokenResponse } from '../models/token';
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +16,18 @@ export class AuthService {
     const body = new URLSearchParams();
     body.set('username', loginRequest.username);
     body.set('password', loginRequest.password);
-    return this.http.post<LoginRequest>(`${this.api}/login`, body, {headers: this.header});
+    return this.http.post<TokenResponse>(`${this.api}/login`, body, {headers: this.header});
+  }
+
+  setToken(jwt: string) {
+    localStorage.setItem('jwt', jwt);
+  }
+
+  getToken(): string | null {
+    return localStorage.getItem('jwt');
+  }
+
+  clear(){
+    localStorage.clear();
   }
 }

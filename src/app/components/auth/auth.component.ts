@@ -1,6 +1,8 @@
+import { Token } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoginRequest } from 'src/app/models/auth';
+import { TokenResponse } from 'src/app/models/token';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -25,8 +27,9 @@ export class AuthComponent implements OnInit {
       username: this.formLogin.controls['username'].value,
       password: this.formLogin.controls['password'].value
     };
-    this.authService.login(request).subscribe((response) => {
+    this.authService.login(request).subscribe((response: TokenResponse) => {
       console.log(response);
+      this.authService.setToken(response.access_token);
     }
     );
   }
