@@ -25,7 +25,7 @@
         <input matInput [type]="'password'" formControlName="password">
       </mat-form-field>
     </p>
-    <button mat-raised-button color="primary">Cadastrar</button>
+    <button mat-raised-button color="primary" (click)="onSubmit()">Cadastrar</button>
   </form>
   <pre>
     {{ formRegister.value | json}}
